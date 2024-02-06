@@ -13,11 +13,13 @@ class RandomTable:
     def roll(self):
         # проверка осталось ли в качестве весов дефолтное значение и создание весов на основе него
         if type(self.weights) == int:
-            self.weights = [1 for x in range(len(self.random_table))]
+            weights = [1 for x in range(len(self.random_table))]
 
         # проверка передали ли в качестве веса значение кубиков и создание весов на основе них
         elif type(self.weights) == str:
             weights = self.dices_to_weights(self.weights)
+        else:
+            weights = self.weights
 
         # выбор случайного элемента
         element_of_table = random.choices(self.random_table, weights=weights, k=len(self.random_table))[0]
