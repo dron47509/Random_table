@@ -1,7 +1,7 @@
 import random
 from itertools import product
 
-class Random_table:
+class RandomTable:
 
 
     def __init__(self, random_table, weights = 1, name=None):
@@ -23,7 +23,7 @@ class Random_table:
         element_of_table = random.choices(self.random_table, weights=weights, k=len(self.random_table))[0]
 
         # является ли элемен случайней таблицей и бросок по ней
-        if element_of_table == Random_table:
+        if element_of_table == RandomTable:
             element_of_table = element_of_table.roll()
 
         # добовление имени таблицы и возрапт значения
